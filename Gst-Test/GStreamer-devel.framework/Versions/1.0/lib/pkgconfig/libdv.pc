@@ -1,0 +1,11 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=${prefix}
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=${prefix}/include
+
+Name: libdv 
+Description: DV software codec
+Requires: 
+Version: 1.0.0
+Libs: -L${libdir} -ldv -lm -lpthread 
+Cflags: -I${includedir}

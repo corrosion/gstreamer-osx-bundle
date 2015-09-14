@@ -1,0 +1,11 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=/Library/Frameworks/GStreamer.framework/Versions/1.0/include
+
+Name: TagLib
+Description: Audio meta-data library
+Requires:  
+Version: 1.7.2
+Libs: -L/Library/Frameworks/GStreamer.framework/Versions/1.0/lib -ltag
+Cflags: -I/Library/Frameworks/GStreamer.framework/Versions/1.0/include/taglib 

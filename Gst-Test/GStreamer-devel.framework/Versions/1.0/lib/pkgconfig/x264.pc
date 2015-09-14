@@ -1,0 +1,11 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=${prefix}
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=${prefix}/include
+
+Name: x264
+Description: H.264 (MPEG4 AVC) encoder library
+Version: 0.140.0+2M 603d999
+Libs: -L/Library/Frameworks/GStreamer.framework/Versions/1.0/lib -lx264 
+Libs.private: -lpthread -lm -ldl
+Cflags: -I${prefix}/include

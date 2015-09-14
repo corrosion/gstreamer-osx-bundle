@@ -1,0 +1,11 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=${prefix}
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=${prefix}/include
+
+Name: libdvdnavmini
+Description: DVD Navigation mini library
+Version: 4.2.1
+
+Cflags: -I${includedir} -I/Library/Frameworks/GStreamer.framework/Versions/1.0/include 
+Libs: -L${libdir} -ldvdnav -lpthread
