@@ -1,0 +1,11 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=/Library/Frameworks/GStreamer.framework/Versions/1.0/include
+
+Name: harfbuzz
+Description: HarfBuzz text shaping library
+Version: 1.0.1
+
+Libs: -L${libdir} -lharfbuzz
+Cflags: -I${includedir}/harfbuzz

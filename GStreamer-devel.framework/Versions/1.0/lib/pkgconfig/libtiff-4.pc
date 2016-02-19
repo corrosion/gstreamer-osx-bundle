@@ -1,0 +1,11 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=${prefix}
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=${prefix}/include
+
+Name: libtiff
+Description:  Tag Image File Format (TIFF) library.
+Version: 4.0.4
+Libs: -L${libdir} -ltiff
+Libs.private: -ljpeg -lz 
+Cflags: -I${includedir}

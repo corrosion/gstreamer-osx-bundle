@@ -11,8 +11,8 @@
 		20CCE92F1BA73E0B0045756C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE92E1BA73E0B0045756C /* main.m */; };
 		20CCE9321BA73E0B0045756C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20CCE9311BA73E0B0045756C /* ViewController.m */; };
 		20CCE9371BA73E0B0045756C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CCE9351BA73E0B0045756C /* Main.storyboard */; };
-		20CCE94D1BA7454D0045756C /* GStreamer in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CCE94C1BA7454D0045756C /* GStreamer */; };
-		20CCE9501BA74C630045756C /* GStreamer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 20CCE94F1BA74C630045756C /* GStreamer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20E4300A1C7760DB0025D375 /* GStreamer in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E430091C7760DB0025D375 /* GStreamer */; };
+		20E4300C1C77611B0025D375 /* GStreamer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 20E4300B1C77611B0025D375 /* GStreamer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -22,7 +22,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				20CCE9501BA74C630045756C /* GStreamer.framework in CopyFiles */,
+				20E4300C1C77611B0025D375 /* GStreamer.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,8 +37,8 @@
 		20CCE9301BA73E0B0045756C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		20CCE9311BA73E0B0045756C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		20CCE9361BA73E0B0045756C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		20CCE94C1BA7454D0045756C /* GStreamer */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = GStreamer; path = "GStreamer-devel.framework/Versions/1.0/GStreamer"; sourceTree = "<group>"; };
-		20CCE94F1BA74C630045756C /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GStreamer.framework; sourceTree = "<group>"; };
+		20E430091C7760DB0025D375 /* GStreamer */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = GStreamer; path = "../GStreamer-devel.framework/Versions/1.0/GStreamer"; sourceTree = "<group>"; };
+		20E4300B1C77611B0025D375 /* GStreamer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GStreamer.framework; path = ../GStreamer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20CCE94D1BA7454D0045756C /* GStreamer in Frameworks */,
+				20E4300A1C7760DB0025D375 /* GStreamer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +56,8 @@
 		20CCE91D1BA73E0B0045756C = {
 			isa = PBXGroup;
 			children = (
-				20CCE94F1BA74C630045756C /* GStreamer.framework */,
-				20CCE94C1BA7454D0045756C /* GStreamer */,
+				20E4300B1C77611B0025D375 /* GStreamer.framework */,
+				20E430091C7760DB0025D375 /* GStreamer */,
 				20CCE9281BA73E0B0045756C /* Gst-Test */,
 				20CCE9271BA73E0B0045756C /* Products */,
 			);
@@ -120,7 +120,7 @@
 		20CCE91E1BA73E0B0045756C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = corrosion;
 				TargetAttributes = {
 					20CCE9251BA73E0B0045756C = {
@@ -203,6 +203,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -269,14 +270,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/GStreamer-devel.framework/Headers",
+					"$(PROJECT_DIR)/../GStreamer-devel.framework/Headers",
 				);
 				INFOPLIST_FILE = "Gst-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GStreamer-devel.framework/Versions/1.0",
-				);
+				PRODUCT_BUNDLE_IDENTIFIER = "corrosion.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -289,14 +287,11 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					"$(PROJECT_DIR)/GStreamer-devel.framework/Headers",
+					"$(PROJECT_DIR)/../GStreamer-devel.framework/Headers",
 				);
 				INFOPLIST_FILE = "Gst-Test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/GStreamer-devel.framework/Versions/1.0",
-				);
+				PRODUCT_BUNDLE_IDENTIFIER = "corrosion.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

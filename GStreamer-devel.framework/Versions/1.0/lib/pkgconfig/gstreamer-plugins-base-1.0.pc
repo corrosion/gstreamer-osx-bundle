@@ -1,0 +1,14 @@
+prefix=/Library/Frameworks/GStreamer.framework/Versions/1.0
+exec_prefix=${prefix}
+libdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib
+includedir=${prefix}/include/gstreamer-1.0
+pluginsdir=/Library/Frameworks/GStreamer.framework/Versions/1.0/lib/gstreamer-1.0
+
+Name: GStreamer Base Plugins Libraries
+Description: Streaming media framework, base plugins libraries
+Requires: gstreamer-1.0 
+Version: 1.7.1.1
+Libs: -L${libdir}
+Cflags: -I${includedir}
+
+libraries=allocators app audio fft pbutils riff rtp rtsp sdp tag video
